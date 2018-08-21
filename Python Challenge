@@ -1,0 +1,33 @@
+#!/usr/bin/env python
+nums = [101,112,131,415,161,718]
+print("The input sequence was:")
+print(nums)
+string = str(nums[0:6])
+conc = ''.join(string)
+newstring=string.translate(None,",")
+newstring1=newstring.translate(None,"[")
+newstring2=newstring1.translate(None,"]")
+newstring3=newstring2.translate(None," ")
+#print(newstring3)
+newnum=[]
+for i in range(18):
+   if(i%2==1):
+    newnum.append(int(newstring3[i-1] + newstring3[i]))
+#print(len(newnum))
+newnum.append(newnum[len(newnum)-1]+1)
+newnum.append(newnum[len(newnum)-1]+1)
+newnum.append(newnum[len(newnum)-1]+1)
+#print(newnum)
+string2=''.join(str(newnum))
+newstring4=string2.translate(None," ")
+#newstring5=newstring4.translate(None,",")
+newstring6=newstring4.translate(None,"[")
+newstring7=newstring6.translate(None,",")
+newstring8=newstring7.translate(None,"]")
+#print(newstring8)
+newnum1=[]
+for j in range(25):
+   if(j%3==1):
+    newnum1.append(int(newstring8[j-1] + newstring8[j] + newstring8[j+1]))
+print("The new sequence after adding the next two numbers is:")
+print(newnum1)
